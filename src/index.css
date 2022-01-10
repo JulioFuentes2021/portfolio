@@ -1,13 +1,82 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hoverForHeader {
+	@apply hover:text-blue-400 cursor-pointer;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.activeForMobile:active {
+	color: red;
+}
+
+.MenuTransition {
+	/* transform: translateY(100%); */
+	transition: visibility 2s ease;
+}
+
+.darkModeIsApplied {
+	@apply dark:bg-black dark:text-white;
+}
+
+.roundedCustom {
+	border-top-left-radius: 150%;
+	border-top-right-radius: 150%;
+	border-bottom-left-radius: 450%;
+	border-bottom-right-radius: 350%;
+}
+
+.customGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	/* justify-items: center; */
+	/* justify-content: center; */
+}
+
+.carouselWidth {
+	width: 300%;
+}
+
+.portfolioGrid {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.pageGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, maxcon);
+}
+
+.hugeText {
+	font-size: clamp(1rem, 10vw, 3rem);
+}
+
+.normalText {
+	font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.smallText {
+	font-size: clamp(1rem, 2.5vw, 2rem);
+}
+
+@media screen and (min-width: 1064px) {
+	.portfolioGrid {
+		display: grid;
+		justify-items: center;
+		grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+		gap: 3rem;
+		margin: 5rem;
+	}
+}
+
+.formDarkMode {
+	@apply bg-red-500 text-white;
+}
+
+.footerGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+	justify-items: center;
 }
